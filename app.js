@@ -35,12 +35,12 @@ app.post("/", (req, res) => {
     //turn the data in string
     var jsonData = JSON.stringify(data);
 
-    const url = "https://us7.api.mailchimp.com/3.0/lists/76b4b9e3fa";
+    const url = config.url;
 
     const options = {
         method: "POST",
-        auth: "rahul:43f3e222d6183088be964c39c240d238-us7"
-    }
+        auth: config.authentication
+    };
     
     const request = https.request(url, options, (response) => {
 
